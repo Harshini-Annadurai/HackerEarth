@@ -1,1 +1,22 @@
-
+#Count pairs of element in two arrays with the condition:
+#(A[i]^[B[j])&X==(A[i]^[B[j])&Y
+#Constraints
+#1<=T<=10
+#1<=N<=10^5
+#1<=X,Y<=10^6
+#1<=A[i],B[j]<=10^6
+#Get Inputs
+testCaseCount = int(raw_input())
+for test in range(testCaseCount):
+numberOfElements = int(raw_input())
+X = int(raw_input())
+Y = int(raw_input())
+A = list(map(int,raw_input().split()))[:numberOfElements]
+B = list(map(int,raw_input().split()))[:numberOfElements]
+count = 0
+for i in A:
+for j in B:
+if (i^j)&X == (i^j)&Y:
+count+=1
+print count
+#this code is not good for having large number of values , needs to be optimized
